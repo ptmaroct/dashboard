@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <style>
+    .main-content {
+        padding: 16px;
+    }
+    
+    .md-tabs-content {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <md-toolbar>
+            <h1 class="md-title">Welcome Mr. XYZ</h1>
+            <md-button class="md-raised md-icon-button md-accent" @click.native="toggleRightSidenav">
+                <md-icon>dehaze</md-icon>
+                <md-tooltip md-direction="bottom">Menu</md-tooltip>
+            </md-button>
+            </md-button>
+            <md-button class="md-raised md-icon-button md-accent">
+                <md-icon>zoom_out_map</md-icon>
+                <md-tooltip md-direction="bottom">Toggle Fullscreen</md-tooltip>
+            </md-button>
+            </md-button>
+            <md-button class="md-raised md-icon-button md-accent">
+                <md-icon>arrow_back</md-icon>
+                <md-tooltip md-direction="bottom">Back</md-tooltip>
+            </md-button>
+            <md-layout md-align="end">
+                <md-layout md-flex="20">
+                    <md-menu md-direction="bottom left">
+                        <md-button md-menu-trigger>Name
+                            <md-icon>keyboard_arrow_down</md-icon>
+                        </md-button>
+                        <md-menu-content>
+                            <md-menu-item>My Item 1</md-menu-item>
+                            <md-menu-item>My Item 2</md-menu-item>
+                            <md-menu-item>My Item 3</md-menu-item>
+                            <md-menu-item md-tooltip="back">My Item 4</md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-layout>
+            </md-layout>
+        </md-toolbar>
+        <md-tabs md-fixed>
+            <md-tab id="dashboard" md-label="dashboard" md-icon="home">
+            </md-tab>
+            <md-tab id="prep_zone" md-label="Attendence" md-icon="equalizer">
+            </md-tab>
+            <md-tab id="test_analytics" md-label="Subject" md-icon="mode_edit">
+            </md-tab>
+            <md-tab id="downloads" md-label="Students" md-icon="tag_faces">
+            </md-tab>
+            <md-tab id="news" md-label="Assignments" md-icon="event_note">
+            </md-tab>
+        </md-tabs>
+        <md-toolbar class="md-accent">
+            <h1 class="md-title">Home / Dashboard</h1>
+            <md-layout md-align="end">
+                <md-layout md-flex="20">
+                    <md-menu md-direction="bottom left">
+                        <md-button md-menu-trigger class="md-raised md-primary">Select Course
+                            <md-icon>keyboard_arrow_down</md-icon>
+                        </md-button>
+                        <md-menu-content>
+                            <md-menu-item>My Item 1</md-menu-item>
+                            <md-menu-item>My Item 2</md-menu-item>
+                            <md-menu-item>My Item 3</md-menu-item>
+                            <md-menu-item>My Item 4</md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-layout>
+            </md-layout>
+        </md-toolbar>
+        <div class="main-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Performance</h3>
+                        <div id="chart" style="height: 250px;">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Status</h3>
+                        <p>Grade for specicfic student, assignment grades, examination grades</p>
+                        <div id="statusbig" style="height: 250px;">
+                        </div>
+                    </div>
+                   
+                </div>
+
+         
+            </div>
+        </div>
+        <md-toolbar>
+            <span>2017 &copy; ABCD Pvt Ltd. </span>
+        </md-toolbar>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vue-material@latest"></script>
+    <script type="text/javascript">
+    Vue.use(VueMaterial)
+    Vue.material.registerTheme('default', {
+        accent: 'blue',
+        warn: 'red'
+    })
+    var App = new Vue({
+        el: '#app'
+    })
+
+    new Morris.Line({
+        // ID of the element in which to draw the chart.
+        element: 'chart',
+        // Chart data records -- each entry in this array corresponds to a point on
+        // the chart.
+        data: [{
+            year: '2008',
+            value: 20
+        }, {
+            year: '2009',
+            value: 10
+        }, {
+            year: '2010',
+            value: 5
+        }, {
+            year: '2011',
+            value: 5
+        }, {
+            year: '2012',
+            value: 20
+        }],
+        // The name of the data record attribute that contains x-values.
+        xkey: 'year',
+        // A list of names of data record attributes that contain y-values.
+        ykeys: ['value'],
+        // Labels for the ykeys -- will be displayed when you hover over the
+        // chart.
+        labels: ['Value']
+    });
+
+
+    new Morris.Bar({
+     element: 'statusbig',
+     data: [
+       { y: 'Physics', a: 100, b: 90, c: 30 },
+       { y: 'Chemistry', a: 75,  b: 65 },
+       { y: 'Maths', a: 50,  b: 40, c:80 },
+     ],
+     xkey: 'y',
+     ykeys: ['a', 'b', 'c'],
+     labels: ['Section A', 'Section B', 'Section C']
+   });
+    </script>
+</body>
+
+</html>

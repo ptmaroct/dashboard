@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+    .main-content {
+        padding: 16px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <md-toolbar>
+            <h1 class="md-title">Welcome Mr. XYZ</h1>
+            <md-button class="md-raised md-icon-button md-accent" @click.native="toggleRightSidenav">
+                <md-icon>dehaze</md-icon>
+                <md-tooltip md-direction="bottom">Menu</md-tooltip>
+            </md-button>
+            </md-button>
+            <md-button class="md-raised md-icon-button md-accent">
+                <md-icon>zoom_out_map</md-icon>
+                <md-tooltip md-direction="bottom">Toggle Fullscreen</md-tooltip>
+            </md-button>
+            </md-button>
+            <md-button class="md-raised md-icon-button md-accent">
+                <md-icon>arrow_back</md-icon>
+                <md-tooltip md-direction="bottom">Back</md-tooltip>
+            </md-button>
+            <md-layout md-align="end">
+                <md-layout md-flex="20">
+                    <md-menu md-direction="bottom left">
+                        <md-button md-menu-trigger>Name
+                            <md-icon>keyboard_arrow_down</md-icon>
+                        </md-button>
+                        <md-menu-content>
+                            <md-menu-item>My Item 1</md-menu-item>
+                            <md-menu-item>My Item 2</md-menu-item>
+                            <md-menu-item>My Item 3</md-menu-item>
+                            <md-menu-item md-tooltip="back">My Item 4</md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-layout>
+            </md-layout>
+        </md-toolbar>
+        <!-- <md-tabs md-fixed>
+            <md-tab id="dashboard" md-label="dashboard" md-icon="home">
+            </md-tab>
+            <md-tab id="prep_zone" md-label="Attendence" md-icon="equalizer">
+            </md-tab>
+            <md-tab id="test_analytics" md-label="Subject" md-icon="mode_edit">
+            </md-tab>
+            <md-tab id="downloads" md-label="Students" md-icon="tag_faces">
+            </md-tab>
+            <md-tab id="news" md-label="Assignments" md-icon="event_note">
+            </md-tab>
+        </md-tabs> -->
+        <md-toolbar class="md-accent">
+            <h1 class="md-title">Home / Students</h1>
+            <md-layout md-align="end">
+                <md-layout md-flex="20">
+                    <md-menu md-direction="bottom left">
+                        <md-button md-menu-trigger class="md-raised md-primary">Select Course
+                            <md-icon>keyboard_arrow_down</md-icon>
+                        </md-button>
+                        <md-menu-content>
+                            <md-menu-item>My Item 1</md-menu-item>
+                            <md-menu-item>My Item 2</md-menu-item>
+                            <md-menu-item>My Item 3</md-menu-item>
+                            <md-menu-item>My Item 4</md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-layout>
+            </md-layout>
+        </md-toolbar>
+        <div class="main-content">
+            <div class="container">
+                <div class="row">
+                    <h2>Students</h2>
+
+                    <md-tabs md-fixed>
+                      <md-tab id="first" md-label="first">
+                        <md-table v-once>
+                          <md-table-header>
+                            <md-table-row>
+                              <md-table-head>Dessert (100g serving)</md-table-head>
+                              <md-table-head md-numeric>Calories (g)</md-table-head>
+                              <md-table-head md-numeric>Fat (g)</md-table-head>
+                              <md-table-head md-numeric>Carbs (g)</md-table-head>
+                              <md-table-head md-numeric>Protein (g)</md-table-head>
+                            </md-table-row>
+                          </md-table-header>
+
+                          <md-table-body>
+                            <md-table-row v-for="(row, index) in 5" :key="index">
+                              <md-table-cell>Dessert Name</md-table-cell>
+                              <md-table-cell v-for="(col, index) in 4" :key="index" md-numeric>10</md-table-cell>
+                            </md-table-row>
+                          </md-table-body>
+                        </md-table>
+                      </md-tab>
+
+                      <md-tab id="second" md-label="second">
+                       <md-table v-once>
+                         <md-table-header>
+                           <md-table-row>
+                             <md-table-head>Dessert (100g serving)</md-table-head>
+                             <md-table-head md-numeric>Calories (g)</md-table-head>
+                             <md-table-head md-numeric>Fat (g)</md-table-head>
+                             <md-table-head md-numeric>Carbs (g)</md-table-head>
+                             <md-table-head md-numeric>Protein (g)</md-table-head>
+                           </md-table-row>
+                         </md-table-header>
+
+                         <md-table-body>
+                           <md-table-row v-for="(row, index) in 5" :key="index">
+                             <md-table-cell>Dessert Name</md-table-cell>
+                             <md-table-cell v-for="(col, index) in 4" :key="index" md-numeric>10</md-table-cell>
+                           </md-table-row>
+                         </md-table-body>
+                       </md-table>
+                      </md-tab>
+
+                      <md-tab id="third" md-label="third">
+                        <md-table v-once>
+                          <md-table-header>
+                            <md-table-row>
+                              <md-table-head>Name</md-table-head>
+                              <md-table-head md-numeric>Attendence</md-table-head>
+                              <md-table-head md-numeric>Grade</md-table-head>
+                              
+                            </md-table-row>
+                          </md-table-header>
+
+                          <md-table-body>
+                            <md-table-row v-for="(row, index) in 5" :key="index">
+                              <md-table-cell>Anuj Sharma</md-table-cell>
+                              <md-table-cell v-for="(col, index) in 2" :key="index" md-numeric>82</md-table-cell>
+                            </md-table-row>
+                          </md-table-body>
+                        </md-table>
+                      </md-tab>
+
+                    
+                    </md-tabs>
+                </div>
+            </div>
+        </div>
+        <md-toolbar>
+            <span>2017 &copy; ABCD Pvt Ltd. </span>
+        </md-toolbar>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vue-material@latest"></script>
+    <script type="text/javascript">
+    Vue.use(VueMaterial)
+    Vue.material.registerTheme('default', {
+        accent: 'blue',
+        warn: 'red'
+    })
+    var App = new Vue({
+        el: '#app'
+    })
+    </script>
+</body>
+
+</html>
