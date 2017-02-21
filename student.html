@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Student</title>
+    <title>Dashboard | Student Zone</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
@@ -12,155 +12,130 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <style>
-    .main-content {
-        padding: 16px;
-    }
+    	a:hover {
+    		text-decoration: none;
+    	}
     </style>
-</head>
+</head> 
 
 <body>
     <div id="app">
-        <md-toolbar>
-            <h1 class="md-title">Welcome Mr. XYZ</h1>
-            <md-button class="md-raised md-icon-button md-accent" @click.native="toggleRightSidenav">
-                <md-icon>dehaze</md-icon>
-                <md-tooltip md-direction="bottom">Menu</md-tooltip>
-            </md-button>
-            </md-button>
-            <md-button class="md-raised md-icon-button md-accent">
-                <md-icon>zoom_out_map</md-icon>
-                <md-tooltip md-direction="bottom">Toggle Fullscreen</md-tooltip>
-            </md-button>
-            </md-button>
-            <md-button class="md-raised md-icon-button md-accent">
-                <md-icon>arrow_back</md-icon>
-                <md-tooltip md-direction="bottom">Back</md-tooltip>
-            </md-button>
-            <md-layout md-align="end">
-                <md-layout md-flex="20">
-                    <md-menu md-direction="bottom left">
-                        <md-button md-menu-trigger>Name
-                            <md-icon>keyboard_arrow_down</md-icon>
-                        </md-button>
-                        <md-menu-content>
-                            <md-menu-item>My Item 1</md-menu-item>
-                            <md-menu-item>My Item 2</md-menu-item>
-                            <md-menu-item>My Item 3</md-menu-item>
-                            <md-menu-item md-tooltip="back">My Item 4</md-menu-item>
-                        </md-menu-content>
-                    </md-menu>
-                </md-layout>
-            </md-layout>
-        </md-toolbar>
-        <!-- <md-tabs md-fixed>
-            <md-tab id="dashboard" md-label="dashboard" md-icon="home">
-            </md-tab>
-            <md-tab id="prep_zone" md-label="Attendence" md-icon="equalizer">
-            </md-tab>
-            <md-tab id="test_analytics" md-label="Subject" md-icon="mode_edit">
-            </md-tab>
-            <md-tab id="downloads" md-label="Students" md-icon="tag_faces">
-            </md-tab>
-            <md-tab id="news" md-label="Assignments" md-icon="event_note">
-            </md-tab>
-        </md-tabs> -->
-        <md-toolbar class="md-accent">
-            <h1 class="md-title">Home / Students</h1>
-            <md-layout md-align="end">
-                <md-layout md-flex="20">
-                    <md-menu md-direction="bottom left">
-                        <md-button md-menu-trigger class="md-raised md-primary">Select Course
-                            <md-icon>keyboard_arrow_down</md-icon>
-                        </md-button>
-                        <md-menu-content>
-                            <md-menu-item>My Item 1</md-menu-item>
-                            <md-menu-item>My Item 2</md-menu-item>
-                            <md-menu-item>My Item 3</md-menu-item>
-                            <md-menu-item>My Item 4</md-menu-item>
-                        </md-menu-content>
-                    </md-menu>
-                </md-layout>
-            </md-layout>
-        </md-toolbar>
-        <div class="main-content">
-            <div class="container">
-                <div class="row">
-                    <h2>Students</h2>
+    <div class="container-fluid">
+    	<div class="row">
+    		<md-toolbar>
+    		<div class="col-md-6">
+    			
+    		    <h1 class="md-title">Welcome to Student Zone</h1>
+    		</div>
+    		<div class="col-md-3 col-md-offset-3">
+    			
+    		        <md-menu md-direction="bottom left">
+    		            <md-button md-menu-trigger>John Doe
+    		                <md-icon>keyboard_arrow_down</md-icon>
+    		            </md-button>
+    		            <md-menu-content>
+    		                <md-menu-item>Profile</md-menu-item>
+    		                <md-menu-item>Settings</md-menu-item>
+    		                <md-menu-item>Help</md-menu-item>
+    		                <md-menu-item>Log out</md-menu-item>
+    		            </md-menu-content>
+    		        </md-menu>
+    		</div>
+    		</md-toolbar>
+    	</div>
+    </div>
+      
+		<md-bottom-bar>
+		  <md-bottom-bar-item md-icon="home" md-active>Dashboard</md-bottom-bar-item>
+		  <md-bottom-bar-item md-icon="library_books" href="course.html">Course</md-bottom-bar-item>
+		  <md-bottom-bar-item md-icon="assignment">Assignments</md-bottom-bar-item>
+		  <md-bottom-bar-item md-icon="event">Events</md-bottom-bar-item>
+		</md-bottom-bar>        
+        <br><br>
+        <div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<md-card md-with-hover>
+					  <md-card-header>
+					    <div class="md-title">Progress</div>
+					    <div class="md-subhead">Progress of your grades is shown here</div>
+					  </md-card-header>
 
-                    <md-tabs md-fixed>
-                      <md-tab id="first" md-label="first">
-                        <md-table v-once>
-                          <md-table-header>
-                            <md-table-row>
-                              <md-table-head>Dessert (100g serving)</md-table-head>
-                              <md-table-head md-numeric>Calories (g)</md-table-head>
-                              <md-table-head md-numeric>Fat (g)</md-table-head>
-                              <md-table-head md-numeric>Carbs (g)</md-table-head>
-                              <md-table-head md-numeric>Protein (g)</md-table-head>
-                            </md-table-row>
-                          </md-table-header>
+					  <md-card-content id="chart_div">
+					   
+					  </md-card-content>
 
-                          <md-table-body>
-                            <md-table-row v-for="(row, index) in 5" :key="index">
-                              <md-table-cell>Dessert Name</md-table-cell>
-                              <md-table-cell v-for="(col, index) in 4" :key="index" md-numeric>10</md-table-cell>
-                            </md-table-row>
-                          </md-table-body>
-                        </md-table>
-                      </md-tab>
+					  <!-- <md-card-actions>
+					    <md-button>Action</md-button>
+					    <md-button>Action</md-button>
+					  </md-card-actions> -->
+					</md-card>
+				</div>
+				<div class="col-md-6">
+					<md-card md-with-hover>
+					  <md-card-header>
+					    <div class="md-title">Attendence</div>
+					    <div class="md-subhead">Subtitle here</div>
+					  </md-card-header>
 
-                      <md-tab id="second" md-label="second">
-                       <md-table v-once>
-                         <md-table-header>
-                           <md-table-row>
-                             <md-table-head>Dessert (100g serving)</md-table-head>
-                             <md-table-head md-numeric>Calories (g)</md-table-head>
-                             <md-table-head md-numeric>Fat (g)</md-table-head>
-                             <md-table-head md-numeric>Carbs (g)</md-table-head>
-                             <md-table-head md-numeric>Protein (g)</md-table-head>
-                           </md-table-row>
-                         </md-table-header>
+					  <md-card-content>
+					    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.
+					  </md-card-content>
 
-                         <md-table-body>
-                           <md-table-row v-for="(row, index) in 5" :key="index">
-                             <md-table-cell>Dessert Name</md-table-cell>
-                             <md-table-cell v-for="(col, index) in 4" :key="index" md-numeric>10</md-table-cell>
-                           </md-table-row>
-                         </md-table-body>
-                       </md-table>
-                      </md-tab>
+					  <md-card-actions>
+					    <md-button>Action</md-button>
+					    <md-button>Action</md-button>
+					  </md-card-actions>
+					</md-card>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<md-card md-with-hover>
+					  <md-card-header>
+					    <div class="md-title">Assignments</div>
+					    <div class="md-subhead">Subtitle here</div>
+					  </md-card-header>
 
-                      <md-tab id="third" md-label="third">
-                        <md-table v-once>
-                          <md-table-header>
-                            <md-table-row>
-                              <md-table-head>Name</md-table-head>
-                              <md-table-head md-numeric>Attendence</md-table-head>
-                              <md-table-head md-numeric>Grade</md-table-head>
-                              
-                            </md-table-row>
-                          </md-table-header>
+					  <md-card-content>
+					    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.
+					  </md-card-content>
 
-                          <md-table-body>
-                            <md-table-row v-for="(row, index) in 5" :key="index">
-                              <md-table-cell>Anuj Sharma</md-table-cell>
-                              <md-table-cell v-for="(col, index) in 2" :key="index" md-numeric>82</md-table-cell>
-                            </md-table-row>
-                          </md-table-body>
-                        </md-table>
-                      </md-tab>
+					  <md-card-actions>
+					    <md-button>Action</md-button>
+					    <md-button>Action</md-button>
+					  </md-card-actions>
+					</md-card>
+				</div>
+				<div class="col-md-6">
+					<md-card md-with-hover>
+					  <md-card-header>
+					    <div class="md-title">Course Progress</div>
+					    <div class="md-subhead">Subtitle here</div>
+					  </md-card-header>
 
-                    
-                    </md-tabs>
-                </div>
-            </div>
+					  <md-card-content>
+					    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.
+					  </md-card-content>
+
+					  <md-card-actions>
+					    <md-button>Action</md-button>
+					    <md-button>Action</md-button>
+					  </md-card-actions>
+					</md-card>
+				</div>
+			</div>        	
         </div>
+        <br>
+
+        <!-- Footer -->
         <md-toolbar>
             <span>2017 &copy; ABCD Pvt Ltd. </span>
         </md-toolbar>
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/vue-material@latest"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
     Vue.use(VueMaterial)
     Vue.material.registerTheme('default', {
@@ -170,6 +145,39 @@
     var App = new Vue({
         el: '#app'
     })
+    </script>
+    <script>
+    	//Chart Data
+    	google.charts.load('current', {packages: ['corechart', 'bar']});
+    	google.charts.setOnLoadCallback(drawBasic);
+
+    	function drawBasic() {
+
+    	      var data = google.visualization.arrayToDataTable([
+    	        ['City', '2010 Population',],
+    	        ['New York City, NY', 8175000],
+    	        ['Los Angeles, CA', 3792000],
+    	        ['Chicago, IL', 2695000],
+    	        ['Houston, TX', 2099000],
+    	        ['Philadelphia, PA', 1526000]
+    	      ]);
+
+    	      var options = {
+    	        title: 'Population of Largest U.S. Cities',
+    	        chartArea: {width: '50%'},
+    	        hAxis: {
+    	          title: 'Total Population',
+    	          minValue: 0
+    	        },
+    	        vAxis: {
+    	          title: 'City'
+    	        }
+    	      };
+
+    	      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+    	      chart.draw(data, options);
+    	    }
     </script>
 </body>
 
