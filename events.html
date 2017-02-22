@@ -65,11 +65,25 @@
 																</md-card-header>
 																<md-card-actions>
 																		<md-button class="md-primary md-raised">Register</md-button>
-																		<md-button class="md-accent md-raised">Details</md-button>
+																		<md-button class="md-accent md-raised"  id="custom" @click.native="openDialog('dialog1')">Details</md-button>
 																</md-card-actions>
 														</md-card-area>
 												</md-card-media-cover>
 										</md-card>
+										<md-dialog md-open-from="#custom" md-close-to="#custom" ref="dialog1">
+										  <md-dialog-title>Interesting Event</md-dialog-title>
+
+										  <md-dialog-content>
+										  	This event is gonna be awesome. Like really dope. <br>
+										  	<b>Dont forget to register yourself</b>
+										  	<b>Also, the date of event is askjdhnaskdjn</b>
+										  </md-dialog-content>
+
+										  <md-dialog-actions>
+										    <md-button class="md-primary" @click.native="closeDialog('dialog1')">Cancel</md-button>
+										    <md-button class="md-primary" @click.native="closeDialog('dialog1')">Ok</md-button>
+										  </md-dialog-actions>
+										</md-dialog>
 								</div>
 								<div class="col-md-6 col-sm-12">
 										<md-card>
@@ -148,7 +162,21 @@
 				warn: 'red'
 		})
 		var App = new Vue({
-				el: '#app'
+				el: '#app',
+				methods: {
+					openDialog(ref) {
+					      this.$refs[ref].open();
+					    },
+					    closeDialog(ref) {
+					      this.$refs[ref].close();
+					    },
+					    onOpen() {
+					      console.log('Opened');
+					    },
+					    onClose(type) {
+					      console.log('Closed', type);
+					    }
+				}
 		})
 		</script>
 </body>
