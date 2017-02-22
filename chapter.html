@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chapter 1 | Student Zone</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vue-material/0.7.1/vue-material.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+    	a:hover {
+    		text-decoration: none;
+    	}
+    </style>
+</head> 
+
+<body>
+    <div id="app">
+    <div class="container-fluid">
+    	<div class="row">
+    		<md-toolbar>
+    		<div class="col-md-6">
+                <md-button class="md-raised md-icon-button md-accent" @click.native="toggleLeftSidenav"><md-icon>dehaze</md-icon>
+                <md-tooltip md-direction="bottom">Menu</md-tooltip></md-button></md-button>
+                <md-button class="md-raised md-icon-button md-accent"><md-icon>zoom_out_map</md-icon>
+                <md-tooltip md-direction="bottom">Toggle Fullscreen</md-tooltip></md-button></md-button>
+                <md-button class="md-raised md-icon-button md-accent"><md-icon>arrow_back</md-icon>
+                    <md-tooltip md-direction="bottom">Back</md-tooltip></md-button>
+    		</div>
+    		<div class="col-md-3 col-md-offset-3">
+    			
+    		        <md-menu md-direction="bottom left">
+    		            <md-button md-menu-trigger>John Doe
+    		                <md-icon>keyboard_arrow_down</md-icon>
+    		            </md-button>
+    		            <md-menu-content>
+    		                <md-menu-item>Profile</md-menu-item>
+    		                <md-menu-item>Settings</md-menu-item>
+    		                <md-menu-item>Help</md-menu-item>
+    		                <md-menu-item>Log out</md-menu-item>
+    		            </md-menu-content>
+    		        </md-menu>
+    		</div>
+    		</md-toolbar>
+    	</div>
+    </div>
+      
+		      
+        <br>
+        <md-sidenav class="md-left" ref="leftSidenav" @open="open('Left')" @close="close('Left')">
+            <md-toolbar class="md-large">
+              <div class="md-toolbar-container">
+               <h3 class="md-title-1">Contents</h3>
+              </div>
+            </md-toolbar>
+
+                            <md-list>
+                                <md-list-item>
+                                  <span> 1 - The title goes here</span>
+
+                                  <md-list-expand>
+                                    <md-list>
+                                      <md-list-item class="md-inset">World</md-list-item>
+                                      <md-list-item class="md-inset">Americas</md-list-item>
+                                      <md-list-item class="md-inset">Europe</md-list-item>
+                                    </md-list>
+                                  </md-list-expand>
+                                </md-list-item>
+
+                                <md-list-item>
+                                  <span> 2 - Another awesome  </span>
+
+                                  <md-list-expand>
+                                    <md-list>
+                                      <md-list-item class="md-inset">Console</md-list-item>
+                                      <md-list-item class="md-inset">PC</md-list-item>
+                                      <md-list-item class="md-inset">Phone</md-list-item>
+                                    </md-list>
+                                  </md-list-expand>
+                                </md-list-item>
+
+                                <md-list-item>
+                                  <span> 3 - Things get boring here</span>
+
+                                  <md-list-expand>
+                                    <md-list>
+                                      <md-list-item class="md-inset">Humor</md-list-item>
+                                      <md-list-item class="md-inset">Music</md-list-item>
+                                      <md-list-item class="md-inset">Movies</md-list-item>
+                                      <md-list-item class="md-inset">TV Shows</md-list-item>
+                                    </md-list>
+                                  </md-list-expand>
+                                </md-list-item>
+                                
+                                <md-list-item>
+                                  <span> 1 - The title goes here</span>
+
+                                  <md-list-expand>
+                                    <md-list>
+                                      <md-list-item class="md-inset">World</md-list-item>
+                                      <md-list-item class="md-inset">Americas</md-list-item>
+                                      <md-list-item class="md-inset">Europe</md-list-item>
+                                    </md-list>
+                                  </md-list-expand>
+                                </md-list-item>
+
+                                <md-list-item>
+                                  <span> 2 - Another awesome  </span>
+
+                                  <md-list-expand>
+                                    <md-list>
+                                      <md-list-item class="md-inset">Console</md-list-item>
+                                      <md-list-item class="md-inset">PC</md-list-item>
+                                      <md-list-item class="md-inset">Phone</md-list-item>
+                                    </md-list>
+                                  </md-list-expand>
+                                </md-list-item>
+
+                                <md-list-item>
+                                  <span> 3 - Things get boring here</span>
+
+                                  <md-list-expand>
+                                    <md-list>
+                                      <md-list-item class="md-inset">Humor</md-list-item>
+                                      <md-list-item class="md-inset">Music</md-list-item>
+                                      <md-list-item class="md-inset">Movies</md-list-item>
+                                      <md-list-item class="md-inset">TV Shows</md-list-item>
+                                    </md-list>
+                                  </md-list-expand>
+                                </md-list-item>
+                                <md-list-item>
+                                  <span> 1 - The title goes here</span>
+
+                                  <md-list-expand>
+                                    <md-list>
+                                      <md-list-item class="md-inset">World</md-list-item>
+                                      <md-list-item class="md-inset">Americas</md-list-item>
+                                      <md-list-item class="md-inset">Europe</md-list-item>
+                                    </md-list>
+                                  </md-list-expand>
+                                </md-list-item>
+
+                                <md-list-item>
+                                  <span> 2 - Another awesome  </span>
+
+                                  <md-list-expand>
+                                    <md-list>
+                                      <md-list-item class="md-inset">Console</md-list-item>
+                                      <md-list-item class="md-inset">PC</md-list-item>
+                                      <md-list-item class="md-inset">Phone</md-list-item>
+                                    </md-list>
+                                  </md-list-expand>
+                                </md-list-item>
+
+                                <md-list-item>
+                                  <span> 3 - Things get boring here</span>
+
+                                  <md-list-expand>
+                                    <md-list>
+                                      <md-list-item class="md-inset">Humor</md-list-item>
+                                      <md-list-item class="md-inset">Music</md-list-item>
+                                      <md-list-item class="md-inset">Movies</md-list-item>
+                                      <md-list-item class="md-inset">TV Shows</md-list-item>
+                                    </md-list>
+                                  </md-list-expand>
+                                </md-list-item>
+                              </md-list>
+          </md-sidenav>
+        <div class="container">
+            <div class="row">
+                <span class="md-display-2">This is  title</span>
+                <br>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                </p>
+                                                              
+                
+                <span class="md-display-1">Section 1</span>
+                <br>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                </p>
+
+                <span class="md-display-2">Section 2</span>
+                <br>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tempora magni incidunt autem eligendi officia praesentium, possimus, accusantium consequuntur dolorem unde quod minima odit vero repellendus quis earum pariatur. Fugiat!
+                </p>
+            </div>
+        </div>
+        <br>
+
+        <!-- Footer -->
+        <md-toolbar>
+            <span>2017 &copy; ABCD Pvt Ltd. </span>
+        </md-toolbar>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue-material/0.7.1/vue-material.js"></script>
+    <script type="text/javascript">
+    Vue.use(VueMaterial)
+    Vue.material.registerTheme('default', {
+        accent: 'blue',
+        warn: 'red'
+    })
+    var App = new Vue({
+        el: '#app',
+        methods: {
+            toggleLeftSidenav() {
+              this.$refs.leftSidenav.toggle();
+            },
+            toggleRightSidenav() {
+              this.$refs.rightSidenav.toggle();
+            },
+            closeRightSidenav() {
+              this.$refs.rightSidenav.close();
+            },
+            open(ref) {
+              console.log('Opened: ' + ref);
+            },
+            close(ref) {
+              console.log('Closed: ' + ref);
+            }
+          }
+    })
+    </script>
+</body>
+
+</html>

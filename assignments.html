@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vue-material/0.7.1/vue-material.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -50,7 +50,22 @@
 		  <md-bottom-bar-item md-icon="library_books" href="course.html">Course</md-bottom-bar-item>
 		  <md-bottom-bar-item md-icon="assignment" md-active>Assignments</md-bottom-bar-item>
 		  <md-bottom-bar-item md-icon="event" href="events.html">Events</md-bottom-bar-item>
-		</md-bottom-bar>        
+		</md-bottom-bar>   
+    <md-tabs md-fixed>
+      <md-tab id="movies" md-label="Assignments">
+        
+      </md-tab>
+
+      <md-tab id="music" md-label="Special Assignments">
+       
+      </md-tab>
+
+    
+    </md-tabs>  
+    <md-snackbar :md-position="vertical + ' ' + horizontal" ref="snackbar" :md-duration="duration">
+        <span>Reminder has been set and you will be reminded accordingly.</span>
+        <md-button class="md-accent" md-theme="light-blue" @click.native="$refs.snackbar.close()">Okay</md-button>
+      </md-snackbar>   
         <br><br>
        	<div class="container">
        			<h2>Pending and Upcoming Assignments</h2>
@@ -68,8 +83,8 @@
        				  </md-card-content>
 
        				  <md-card-actions>
-       				    <md-button>Remind Me</md-button>
-       				    <md-button>Submit</md-button>
+       				    <md-button @click.native="open">Remind Me</md-button>
+       				    <md-button>View</md-button>
        				  </md-card-actions>
        				</md-card>
        			</div>
@@ -86,7 +101,7 @@
 
        				  <md-card-actions>
        				    <md-button>Remind Me</md-button>
-       				    <md-button>Submit</md-button>
+       				    <md-button>View</md-button>
        				  </md-card-actions>
        				</md-card>
        			</div>
@@ -167,7 +182,7 @@
 
 
 					  <md-card-actions>
-					    <md-chip class="md-primary md-raised"><md-icon>done</md-icon> Submitted</md-chip>	
+					    <md-button class="md-primary md-raised"><md-icon>done</md-icon> Submitted</md-button>	
 					    <md-button disabled><md-icon>schedule</md-icon> Checking Pending</md-button>	
 					  </md-card-actions>
 					</md-card>
@@ -184,7 +199,7 @@
         </md-toolbar>
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/vue-material@latest"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue-material/0.7.1/vue-material.js"></script>
     <script type="text/javascript">
     Vue.use(VueMaterial)
     Vue.material.registerTheme('default', {
@@ -192,7 +207,17 @@
         warn: 'red'
     })
     var App = new Vue({
-        el: '#app'
+        el: '#app',
+        data: {
+          vertical: 'top',
+             horizontal: 'center',
+             duration: 4000
+           },
+        methods: {
+          open: function() {
+               this.$refs.snackbar.open();
+             }
+        }
     })
     </script>
 </body>

@@ -7,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vue-material/0.7.1/vue-material.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 
     <style>
     	a:hover {
@@ -53,78 +56,121 @@
 		</md-bottom-bar>        
         <br><br>
         <div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<md-card md-with-hover>
-					  <md-card-header>
-					    <div class="md-title">Progress</div>
-					    <div class="md-subhead">Progress of your grades is shown here</div>
-					  </md-card-header>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="rowz">
+                        <md-card md-with-hover>
+                            <md-card-header>
+                                <div class="md-title"> Course Progress</div>
+                                <div class="md-subhead">Progress of your grades is shown here</div>
+                            </md-card-header>
+                            <md-card-content id="statusbig" style="height: 250px;">
+                               
+                            </md-card-content>
+                        </md-card> <br>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <md-card>
+                    <!-- style="min-height:  492px" -->
+                        <md-card-header>
+                            <div class="md-title">Notice Board</div>
+                            <div class="md-subhead">Subtitle here</div>
+                        </md-card-header>
+                        <md-card-content>
+                            <md-table>
+                                <md-table-row>
+                                    <md-table-cell> Important Notice</md-table-cell>
+                                </md-table-row>
+                                <md-table-row>
+                                    <md-table-cell> Okayish Notice</md-table-cell>
+                                </md-table-row>
+                                <md-table-row>
+                                    <md-table-cell> Nice Notice</md-table-cell>
+                                </md-table-row>
+                                <md-table-row>
+                                    <md-table-cell> Event Notice</md-table-cell>
+                                </md-table-row>
+                                <md-table-row>
+                                    <md-table-cell> Important Notice</md-table-cell>
+                                </md-table-row>
+                                
+                            </md-table>
+                        </md-card-content>
+                        
+                    </md-card>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <md-card md-with-hover>
+                        <md-card-header>
+                            <div class="md-title"> Attendence</div>
+                            <div class="md-subhead">Progress of your attendance is shown here</div>
+                        </md-card-header>
+                        <md-card-content id="chart_divas">
+                            <md-spinner :md-size="150" md-progress="90">
+                                <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle">TEXT</text>    
 
-					  <md-card-content id="chart_div">
-					   
-					  </md-card-content>
+                            </md-spinner>
+                           <br>Your attendance is 90% <br> <b>
+                           Classes Attended:  90 / 100</b>
+                        </md-card-content>
+                    </md-card>
+                </div>
+                <div class="col-md-3">
+                    <md-card md-with-hover>
+                        <md-card-header>
+                            <div class="md-title"> Grades</div>
+                            <div class="md-subhead">Progress of your attendance is shown here</div>
+                        </md-card-header>
+                        <md-card-content id="chart_divas">
+                            <span class="md-display-1">Physics : A+</span> <br>
+                            <span class="md-display-1">Physics : A+</span> <br>
+                            <span class="md-display-1">Physics : A+</span> <br>
+                            <span class="md-display-1">Physics : A+</span> <br>
+                            <span class="md-display-1">Physics : A+</span> <br>
+                        </md-card-content>
+                    </md-card>
+                </div>
+                <div class="col-md-6">
 
-					  <!-- <md-card-actions>
-					    <md-button>Action</md-button>
-					    <md-button>Action</md-button>
-					  </md-card-actions> -->
-					</md-card>
-				</div>
-				<div class="col-md-6">
-					<md-card md-with-hover>
-					  <md-card-header>
-					    <div class="md-title">Attendence</div>
-					    <div class="md-subhead">Subtitle here</div>
-					  </md-card-header>
-
-					  <md-card-content>
-					    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.
-					  </md-card-content>
-
-					  <md-card-actions>
-					    <md-button>Action</md-button>
-					    <md-button>Action</md-button>
-					  </md-card-actions>
-					</md-card>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<md-card md-with-hover>
-					  <md-card-header>
-					    <div class="md-title">Assignments</div>
-					    <div class="md-subhead">Subtitle here</div>
-					  </md-card-header>
-
-					  <md-card-content>
-					    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.
-					  </md-card-content>
-
-					  <md-card-actions>
-					    <md-button>Action</md-button>
-					    <md-button>Action</md-button>
-					  </md-card-actions>
-					</md-card>
-				</div>
-				<div class="col-md-6">
-					<md-card md-with-hover>
-					  <md-card-header>
-					    <div class="md-title">Course Progress</div>
-					    <div class="md-subhead">Subtitle here</div>
-					  </md-card-header>
-
-					  <md-card-content>
-					    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.
-					  </md-card-content>
-
-					  <md-card-actions>
-					    <md-button>Action</md-button>
-					    <md-button>Action</md-button>
-					  </md-card-actions>
-					</md-card>
-				</div>
-			</div>        	
+                    <div id="chart"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <md-card md-with-hover>
+                        <md-card-header>
+                            <div class="md-title">Time Table</div>
+                            <div class="md-subhead">Subtitle here</div>
+                        </md-card-header>
+                        <md-card-content>
+                            <md-table v-once>
+                                <md-table-header>
+                                    <md-table-row>
+                                        <md-table-head md-numeric>Class</md-table-head>
+                                        <md-table-head md-numeric>9AM to 10AM</md-table-head>
+                                        <md-table-head md-numeric>10AM to 12 PM</md-table-head>
+                                        <md-table-head md-numeric>1PM to 3PM</md-table-head>
+                                        <md-table-head md-numeric>4PM to 5PM</md-table-head>
+                                    </md-table-row>
+                                </md-table-header>
+                                <md-table-body>
+                                    <md-table-row v-for="(row, index) in 6" :key="index">
+                                        <md-table-cell md-numeric> Class{{row}}</md-table-cell>
+                                        <md-table-cell md-numeric>Some</md-table-cell>
+                                        <md-table-cell md-numeric>Some</md-table-cell>
+                                        <md-table-cell md-numeric>Some</md-table-cell>
+                                        <md-table-cell md-numeric>Some</md-table-cell>
+                                        <!-- <md-table-cell v-for="(col, index) in 4" :key="index" md-numeric>10</md-table-cell> -->
+                                    </md-table-row>
+                                </md-table-body>
+                            </md-table>
+                        </md-card-content>
+                    </md-card>
+                </div>
+            </div>
         </div>
         <br>
 
@@ -134,7 +180,7 @@
         </md-toolbar>
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/vue-material@latest"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue-material/0.7.1/vue-material.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
     Vue.use(VueMaterial)
@@ -178,6 +224,58 @@
 
     	      chart.draw(data, options);
     	    }
+            new Morris.Bar({
+                element: 'statusbig',
+                data: [{
+                    y: 'Physics',
+                    a: 100,
+                    b: 90,
+                    c: 30
+                }, {
+                    y: 'Chemistry',
+                    a: 75,
+                    b: 65
+                }, {
+                    y: 'Maths',
+                    a: 50,
+                    b: 40,
+                    c: 80
+                }, ],
+                xkey: 'y',
+                ykeys: ['a', 'b', 'c'],
+                labels: ['Section A', 'Section B', 'Section C']
+            });
+
+            new Morris.Line({
+                // ID of the element in which to draw the chart.
+                element: 'chart',
+                // Chart data records -- each entry in this array corresponds to a point on
+                // the chart.
+                data: [{
+                    year: '2008',
+                    value: 20
+                }, {
+                    year: '2009',
+                    value: 10
+                }, {
+                    year: '2010',
+                    value: 5
+                }, {
+                    year: '2011',
+                    value: 5
+                }, {
+                    year: '2012',
+                    value: 20
+                }],
+                // The name of the data record attribute that contains x-values.
+                xkey: 'year',
+                // A list of names of data record attributes that contain y-values.
+                ykeys: ['value'],
+                // Labels for the ykeys -- will be displayed when you hover over the
+                // chart.
+                // labels: ['Value']
+            });
+            </script>
     </script>
 </body>
 
