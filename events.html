@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		<title>Events | Student Zone</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.css">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<style>
+		a:hover {
+				text-decoration: none;
+		}
+		</style>
+</head>
+
+<body>
+		<div id="app">
+				<div class="container-fluid">
+						<div class="row">
+								<md-toolbar>
+										<div class="col-md-6">
+												<h1 class="md-title">Welcome to Student Zone</h1>
+										</div>
+										<div class="col-md-3 col-md-offset-3">
+												<md-menu md-direction="bottom left">
+														<md-button md-menu-trigger>John Doe
+																<md-icon>keyboard_arrow_down</md-icon>
+														</md-button>
+														<md-menu-content>
+																<md-menu-item>Profile</md-menu-item>
+																<md-menu-item>Settings</md-menu-item>
+																<md-menu-item>Help</md-menu-item>
+																<md-menu-item>Log out</md-menu-item>
+														</md-menu-content>
+												</md-menu>
+										</div>
+								</md-toolbar>
+						</div>
+				</div>
+				<md-bottom-bar>
+						<md-bottom-bar-item md-icon="home" href="student.html">Dashboard</md-bottom-bar-item>
+						<md-bottom-bar-item md-icon="library_books" href="course.html">Course</md-bottom-bar-item>
+						<md-bottom-bar-item md-icon="assignment" href="assignments.html">Assignments</md-bottom-bar-item>
+						<md-bottom-bar-item md-icon="event" md-active>Events</md-bottom-bar-item>
+				</md-bottom-bar>
+				<br>
+				<br>
+				<div class="container">
+						<h2>Upcoming Events</h2>
+						<div class="row">
+								<div class="col-md-6 col-sm-12">
+										<md-card>
+												<md-card-media-cover md-solid>
+														<md-card-media md-ratio="16:9">
+																<img src="https://vuematerial.github.io/assets/card-sky.jpg" alt="Skyscraper">
+														</md-card-media>
+														<md-card-area>
+																<md-card-header>
+																		<div class="md-title">Interesting Event</div>
+																		<div class="md-subhead">31 Feb 2017 - 4 March 2017</div>
+																</md-card-header>
+																<md-card-actions>
+																		<md-button class="md-primary md-raised">Register</md-button>
+																		<md-button class="md-accent md-raised">Details</md-button>
+																</md-card-actions>
+														</md-card-area>
+												</md-card-media-cover>
+										</md-card>
+								</div>
+								<div class="col-md-6 col-sm-12">
+										<md-card>
+												<md-card-media-cover md-solid>
+														<md-card-media md-ratio="16:9">
+																<img src="https://vuematerial.github.io/assets/card-sky.jpg" alt="Skyscraper">
+														</md-card-media>
+														<md-card-area>
+																<md-card-header>
+																		<div class="md-title">Awesome Event</div>
+																		<div class="md-subhead">25 Feb 2017 - 26 Feb 2017</div>
+																</md-card-header>
+																<md-card-actions>
+																		<md-button class="md-primary md-raised">Register</md-button>
+																		<md-button class="md-accent md-raised">Details</md-button>
+																</md-card-actions>
+														</md-card-area>
+												</md-card-media-cover>
+										</md-card>
+								</div>
+						</div>
+						<h2>Previous Events</h2>
+						<div class="row">
+								<div class="col-md-6 col-sm-12">
+										<md-card>
+												<md-card-media-cover md-solid>
+														<md-card-media md-ratio="16:9">
+																<img src="https://vuematerial.github.io/assets/card-example.jpg" alt="Skyscraper">
+														</md-card-media>
+														<md-card-area>
+																<md-card-header>
+																		<div class="md-title">Farewell Party</div>
+																		<div class="md-subhead">10 Feb 2017 - 12 Feb 2017</div>
+																</md-card-header>
+																<md-card-actions>
+																		<md-button class="md-primary md-raised">Pictures</md-button>
+																		<md-button class="md-accent md-raised">Details</md-button>
+																</md-card-actions>
+														</md-card-area>
+												</md-card-media-cover>
+										</md-card>
+								</div>
+								<div class="col-md-6 col-sm-12">
+										<md-card>
+												<md-card-media-cover md-solid>
+														<md-card-media md-ratio="16:9">
+																<img src="https://vuematerial.github.io/assets/card-example.jpg" alt="Skyscraper">
+														</md-card-media>
+														<md-card-area>
+																<md-card-header>
+																		<div class="md-title">Tech Fest</div>
+																		<div class="md-subhead">3 Feb 2017 - 4 Feb 2017</div>
+																</md-card-header>
+																<md-card-actions>
+																		<md-button class="md-primary md-raised">Pictures</md-button>
+																		<md-button class="md-accent md-raised">Details</md-button>
+																</md-card-actions>
+														</md-card-area>
+												</md-card-media-cover>
+										</md-card>
+								</div>
+						</div>
+				</div>
+				<br>
+				<!-- Footer -->
+				<md-toolbar>
+						<span>2017 &copy; ABCD Pvt Ltd. </span>
+				</md-toolbar>
+		</div>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
+		<script type="text/javascript" src="https://unpkg.com/vue-material@latest"></script>
+		<script type="text/javascript">
+		Vue.use(VueMaterial)
+		Vue.material.registerTheme('default', {
+				accent: 'blue',
+				warn: 'red'
+		})
+		var App = new Vue({
+				el: '#app'
+		})
+		</script>
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignments | Student Zone</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+    	a:hover {
+    		text-decoration: none;
+    	}
+    </style>
+</head> 
+
+<body>
+    <div id="app">
+    <div class="container-fluid">
+    	<div class="row">
+    		<md-toolbar>
+    		<div class="col-md-6">
+    			
+    		    <h1 class="md-title">Welcome to Student Zone</h1>
+    		</div>
+    		<div class="col-md-3 col-md-offset-3">
+    			
+    		        <md-menu md-direction="bottom left">
+    		            <md-button md-menu-trigger>John Doe
+    		                <md-icon>keyboard_arrow_down</md-icon>
+    		            </md-button>
+    		            <md-menu-content>
+    		                <md-menu-item>Profile</md-menu-item>
+    		                <md-menu-item>Settings</md-menu-item>
+    		                <md-menu-item>Help</md-menu-item>
+    		                <md-menu-item>Log out</md-menu-item>
+    		            </md-menu-content>
+    		        </md-menu>
+    		</div>
+    		</md-toolbar>
+    	</div>
+    </div>
+      
+		<md-bottom-bar>
+		  <md-bottom-bar-item md-icon="home" href="student.html">Dashboard</md-bottom-bar-item>
+		  <md-bottom-bar-item md-icon="library_books" href="course.html">Course</md-bottom-bar-item>
+		  <md-bottom-bar-item md-icon="assignment" md-active>Assignments</md-bottom-bar-item>
+		  <md-bottom-bar-item md-icon="event" href="events.html">Events</md-bottom-bar-item>
+		</md-bottom-bar>        
+        <br><br>
+       	<div class="container">
+       			<h2>Pending and Upcoming Assignments</h2>
+       		<div class="row">
+
+       			<div class="col-md-6 col-sm-12">
+       				<md-card md-with-hover>
+       				  <md-card-header>
+       				    <div class="md-title">Assignment 1</div>
+       				    <div class="md-subhead">Physics</div>
+       				  </md-card-header>
+
+       				  <md-card-content>
+       				    Do Questions 1 to 1- from chapter 1 and revise this and that.
+       				  </md-card-content>
+
+       				  <md-card-actions>
+       				    <md-button>Remind Me</md-button>
+       				    <md-button>Submit</md-button>
+       				  </md-card-actions>
+       				</md-card>
+       			</div>
+       			<div class="col-md-6 col-sm-12">
+       				<md-card md-with-hover>
+       				  <md-card-header>
+       				    <div class="md-title">Assignment 3</div>
+       				    <div class="md-subhead">Mathematics</div>
+       				  </md-card-header>
+
+       				  <md-card-content>
+       				    Practice 10 questions from  this book and submit assignment to teacher
+       				  </md-card-content>
+
+       				  <md-card-actions>
+       				    <md-button>Remind Me</md-button>
+       				    <md-button>Submit</md-button>
+       				  </md-card-actions>
+       				</md-card>
+       			</div>
+       			<div class="col-md-6 col-sm-12"></div>
+       			<div class="col-md-6 col-sm-12"></div>
+       		</div>
+
+       		<h2>Submitted Assignments</h2>
+       		<div class="row">
+				<div class="col-md-6 col-sm-12">
+					<md-card md-with-hover>
+					  <md-card-header>
+					    <div class="md-title">Assignment 1</div>
+					    <div class="md-subhead">Chemistry</div>
+					  </md-card-header>
+
+					  <md-card-content>
+					    Do Questions 1 to 1- from chapter 1 and revise this and that.
+					    <p>Grade Obtained is thus out of that</p>
+					  </md-card-content>
+
+					  <md-card-actions>
+					    <md-button class="md-primary md-raised"><md-icon>done</md-icon> Submitted</md-button>	
+					    <md-button disabled><md-icon>schedule</md-icon> Checking Pending</md-button>	
+					  </md-card-actions>
+					</md-card>
+				</div>
+				<div class="col-md-6 col-sm-12">
+					<md-card md-with-hover>
+					  <md-card-header>
+					    <div class="md-title">Assignment 2</div>
+					    <div class="md-subhead">Mathematics</div>
+					  </md-card-header>
+
+					  <md-card-content>
+					    Practice 10 questions from  this book and submit assignment to teacher
+					    <p>Grade Obtained is lol out of kek</p>
+					  </md-card-content>
+
+
+					  <md-card-actions>
+					    <md-button class="md-primary md-raised"><md-icon>done</md-icon> Submitted</md-button>	
+					    <md-button class="md-primary md-raised"><md-icon>done_all</md-icon> Checked</md-button>	
+					  </md-card-actions>
+					</md-card>
+				</div>
+
+				<div class="col-md-6 col-sm-12">
+					<md-card md-with-hover>
+					  <md-card-header>
+					    <div class="md-title">Assignment 2</div>
+					    <div class="md-subhead">Mathematics</div>
+					  </md-card-header>
+
+					  <md-card-content>
+					    Practice 10 questions from  this book and submit assignment to teacher
+					    <p>Grade Obtained is lol out of kek</p>
+					  </md-card-content>
+
+
+					  <md-card-actions>
+					    <md-button class="md-primary md-raised"><md-icon>done</md-icon> Submitted</md-button>	
+					    <md-button class="md-primary md-raised"><md-icon>done_all</md-icon> Checked</md-button>	
+					  </md-card-actions>
+					</md-card>
+				</div>
+				<div class="col-md-6 col-sm-12">
+					<md-card md-with-hover>
+					  <md-card-header>
+					    <div class="md-title">Assignment 2</div>
+					    <div class="md-subhead">Geography</div>
+					  </md-card-header>
+
+					  <md-card-content>
+					    Practice 10 questions from  this book and submit assignment to teacher
+					    <p>Grade Obtained is lol out of kek</p>
+					  </md-card-content>
+
+
+					  <md-card-actions>
+					    <md-chip class="md-primary md-raised"><md-icon>done</md-icon> Submitted</md-chip>	
+					    <md-button disabled><md-icon>schedule</md-icon> Checking Pending</md-button>	
+					  </md-card-actions>
+					</md-card>
+				</div>
+
+
+       		</div>
+       	</div>
+        <br>
+
+        <!-- Footer -->
+        <md-toolbar>
+            <span>2017 &copy; ABCD Pvt Ltd. </span>
+        </md-toolbar>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vue-material@latest"></script>
+    <script type="text/javascript">
+    Vue.use(VueMaterial)
+    Vue.material.registerTheme('default', {
+        accent: 'blue',
+        warn: 'red'
+    })
+    var App = new Vue({
+        el: '#app'
+    })
+    </script>
+</body>
+
+</html>
