@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Attendance | Faculty Zone</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/vue-material.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+    a:hover {
+        text-decoration: none;
+    }
+    #dangerTable .md-table-cell-container {
+        color: #f44336;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container-fluid">
+            <div class="row">
+                <md-toolbar>
+                    <div class="col-md-6">
+                        <h1 class="md-title">Welcome to Faculty Zone</h1>
+                    </div>
+                    <div class="col-md-3 col-md-offset-3">
+                        <md-menu md-direction="bottom left">
+                            <md-button md-menu-trigger>Mr. Ashok Kumar
+                                <md-icon>keyboard_arrow_down</md-icon>
+                            </md-button>
+                            <md-menu-content>
+                                <md-menu-item>Profile</md-menu-item>
+                                <md-menu-item>Settings</md-menu-item>
+                                <md-menu-item>Help</md-menu-item>
+                                <md-menu-item>Log out</md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+                </md-toolbar>
+            </div>
+        </div>
+        <md-bottom-bar>
+                  <md-bottom-bar-item md-icon="home"  href="faculty.html">Dashboard</md-bottom-bar-item>
+                <md-bottom-bar-item md-icon="perm_identity" href="students.html">Students</md-bottom-bar-item>
+                  <md-bottom-bar-item md-icon="library_books" href="course.html">Course</md-bottom-bar-item>
+                  <md-bottom-bar-item md-icon="assignment" md-active>Attendance</md-bottom-bar-item>
+                  <md-bottom-bar-item md-icon="event" href="events.html">Events</md-bottom-bar-item>
+        </md-bottom-bar>
+        <br>
+        <br>
+        <div class="container">
+            <md-tabs md-fixed>
+              <md-tab id="3A" md-label="3A">
+                <md-table v-once >
+                  <md-table-header>
+                    <md-table-row>
+                      <md-table-head md-numeric>Roll No.</md-table-head>
+                      <md-table-head>Name</md-table-head>
+                      <md-table-head>Father's Name</md-table-head>
+                      <md-table-head md-numeric>Phone No.</md-table-head>
+                      <md-table-head md-numeric>Attendence</md-table-head>
+                    </md-table-row>
+                  </md-table-header>
+
+                  <md-table-body>
+                    <md-table-row v-for="(row, index) in 30" :key="index" md-auto-select md-selection>
+                      <md-table-cell md-numeric>{{row}}</md-table-cell>
+                      <md-table-cell>Anuj Sharma</md-table-cell>
+                      <md-table-cell>Rakesh Sharma</md-table-cell>
+                      <md-table-cell md-numeric>+91 9874563210</md-table-cell>
+                      <md-table-cell md-numeric>88%</md-table-cell>
+                      <!-- <md-table-cell v-for="(col, index) in 4" :key="index" md-numeric>10</md-table-cell> -->
+                    </md-table-row>
+                  </md-table-body>
+                </md-table>
+              </md-tab>
+
+              <md-tab id="2B" md-label="2B">
+                <md-table v-once id="dangerTable">
+                  <md-table-header>
+                    <md-table-row>
+                      <md-table-head md-numeric>Roll No.</md-table-head>
+                      <md-table-head>Name</md-table-head>
+                      <md-table-head>Father's Name</md-table-head>
+                      <md-table-head md-numeric>Phone No.</md-table-head>
+                      <md-table-head md-numeric>Attendence</md-table-head>
+                    </md-table-row>
+                  </md-table-header>
+
+                  <md-table-body>
+                    <md-table-row v-for="(row, index) in 30" :key="index">
+                      <md-table-cell md-numeric>{{row}}</md-table-cell>
+                      <md-table-cell>Amrit Sharma</md-table-cell>
+                      <md-table-cell>Atul Sharma</md-table-cell>
+                      <md-table-cell md-numeric>+91 9874123456</md-table-cell>
+                      <md-table-cell md-numeric>78%</md-table-cell>
+                      <!-- <md-table-cell v-for="(col, index) in 4" :key="index" md-numeric>10</md-table-cell> -->
+                    </md-table-row>
+                  </md-table-body>
+                </md-table>
+              </md-tab>
+
+              <md-tab id="5C" md-label="5C">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas.</p>
+              </md-tab>
+
+              <md-tab id="4D" md-label="4D">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas.</p>
+              </md-tab>
+            </md-tabs>
+        </div>
+        <br>
+        <!-- Footer -->
+        <md-toolbar>
+            <span>2017 &copy; ABCD Pvt Ltd. </span>
+        </md-toolbar>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vue-material@latest"></script>
+    <script type="text/javascript">
+    Vue.use(VueMaterial)
+    Vue.material.registerTheme('default', {
+        accent: 'blue',
+        warn: 'red'
+    })
+    var App = new Vue({
+        el: '#app',
+        methods: {
+          openDialog(ref) {
+                this.$refs[ref].open();
+              },
+              closeDialog(ref) {
+                this.$refs[ref].close();
+              },
+              onOpen() {
+                console.log('Opened');
+              },
+              onClose(type) {
+                console.log('Closed', type);
+              }
+        }
+    })
+    </script>
+</body>
+
+</html>
